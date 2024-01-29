@@ -9,16 +9,16 @@ export const ListExpenses = () => {
     const [expenses, setExpenses] = useState([]);
     const loadExpenses = async() => {
         const id = localStorage.getItem("id");
-        const res = await axios.get(`http://localhost:3002/expense/expense/${id}`);
+        const res = await axios.get(`https://expense-backend-tan.vercel.app/expense/expense/${id}`);
         console.log(res.data.data);
         setExpenses(res.data.data);
     }
     const deleteExpense = async id => {
-        await axios.delete(`http://localhost:3002/expense/expense/${id}`);
+        await axios.delete(`https://expense-backend-tan.vercel.app/expense/expense/${id}`);
         loadExpenses();
     }
     const updateExpense = async id => {
-        await axios.put(`http://localhost:3002/expense/expense/${id}`);
+        await axios.put(`https://expense-backend-tan.vercel.app/expense/expense/${id}`);
         loadExpenses();
     }
     useEffect(() => {
