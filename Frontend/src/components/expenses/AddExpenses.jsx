@@ -28,7 +28,7 @@ export const AddExpenses = () => {
       formData.append("status", data.status);
       formData.append("expense", selectedExpense);
       const res = await axios.post(
-        "http://localhost:3002/expenseSubCat/expenseSubCat", 
+        "https://expense-backend-tan.vercel.app/expenseSubCat/expenseSubCat", 
         formData, 
         {
           headers: {
@@ -39,7 +39,7 @@ export const AddExpenses = () => {
       console.log(res.data);
   };
   const loadExpenses = async() => {
-    const res = await axios.get("http://localhost:3002/expense/expense");
+    const res = await axios.get("https://expense-backend-tan.vercel.app/expense/expense");
     console.log(res.data.data);
     setExpenses(res.data.data);
     return res.data.data.name;
