@@ -14,7 +14,7 @@ export const Login = () => {
       formData.append("email", data.email);
       formData.append("password", data.password);
       try{
-      const res = await axios.post("http://localhost:3002/user/loginwithenc", data)
+      const res = await axios.post("https://expense-backend-tan.vercel.app/user/loginwithenc", data)
       console.log(res.data);
 
       localStorage.setItem('token', res.data.token);
