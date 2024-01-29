@@ -14,6 +14,7 @@ export const Login = () => {
       formData.append("email", data.email);
       formData.append("password", data.password);
       try{
+
       const res = await axios.post("http://localhost:3002/user/loginwithenc", data)
       console.log(res.data);
 
@@ -21,10 +22,12 @@ export const Login = () => {
       // localStorage.setItem('user', res.data.user);
       const user = localStorage.getItem('user');
       const token = localStorage.getItem('token');
-     console.log(token);
-
-     console.log("Login Successful");
-     toast.success('Logged In Successfully!', {
+      console.log(token);
+        if(res.ok){
+          window.location.href("/WdywExpense");
+        }
+      console.log("Login Successful");
+      toast.success('Logged In Successfully!', {
        position: "top-right",
        autoClose: 5000,
        hideProgressBar: false,
@@ -35,6 +38,7 @@ export const Login = () => {
        theme: "light",
        transition: Bounce,
        });
+       
       }
       catch(err){
         console.log(err);
