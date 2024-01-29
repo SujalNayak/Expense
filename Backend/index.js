@@ -18,7 +18,7 @@ app.use('/expense', expenseRoutes);
 const expenseSubCatRoutes = require("./routes/ExpenseSubCatRoutes");
 app.use('/expenseSubCat', expenseSubCatRoutes);
 
-mongoose.connect("mongodb://127.0.0.1:27017/ExpenseManager", {
+mongoose.connect("mongodb+srv://SujalNayak:Sujal1504@cluster0.6vhc6xf.mongodb.net/ExpenseManager", {
   // useNewUrlParser: true,
   // useUnifiedTopology: true,
 }).then(()=>{
