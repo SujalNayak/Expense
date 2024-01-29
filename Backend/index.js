@@ -5,7 +5,7 @@ const app = express();
 const PORT = 3002;
 // app.use(cors());
 app.use(cors({
-  origin: 'https://stock-market-prediction-theta.vercel.app',
+  origin: 'https://expense-fawn-chi.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
