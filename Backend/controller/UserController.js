@@ -36,17 +36,18 @@ const addUserWithEncryption = async (req, res) => {
     const user = new userSchema(userObj);
     var token = tokenutil.generateToken(userObj);
 
-    user.save()
-        .then((data1) => {
+    // user.save()
+    //     .then((data1) => {
 
-            mailer
-                .sendMail(
-                    req.body.email,
-                    req.body.fname,
-                    "This is the Mail from Sujal Nayak",
-                    "This is test mail from nodejs"
-                )
-                .then((data) => {
+            // mailer
+            //     .sendMail(
+            //         req.body.email,
+            //         req.body.fname,
+            //         "This is the Mail from Sujal Nayak",
+            //         "This is test mail from nodejs"
+            //     )
+                
+            user.save().then((data1) => {
                     res.status(201).json({
                         message: "Data has been saved",
                         success: true,
@@ -59,10 +60,11 @@ const addUserWithEncryption = async (req, res) => {
                         error: err,
                     });
                 });
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+        // })
+//         })
+//         .catch((err) => {
+//             console.log(err);
+//         });
 };
 
 const getUserByToken = async (req, res) => {
