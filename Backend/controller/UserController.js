@@ -26,7 +26,6 @@ const getUsers = (req, res) => {
 
 const addUserWithEncryption = async (req, res) => {
     const userObj = {
-        id: req.body.id,
         fname: req.body.fname,
         lname: req.body.lname,
         email: req.body.email,
@@ -39,7 +38,6 @@ const addUserWithEncryption = async (req, res) => {
 
     user.save()
         .then((data1) => {
-            console.log("1");
 
             mailer
                 .sendMail(
@@ -63,8 +61,6 @@ const addUserWithEncryption = async (req, res) => {
                 });
         })
         .catch((err) => {
-            console.log("2");
-
             console.log(err);
         });
 };
