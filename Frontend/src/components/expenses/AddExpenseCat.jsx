@@ -21,8 +21,12 @@ export const AddExpenseCat = () => {
         formData.append("name", data.name);
         formData.append("status", data.status);
         const res = await axios.post(
+<<<<<<< HEAD
             "https://expense-backend-tan.vercel.app/expense/expense",
             formData,
+=======
+            "https://expense-backend-tan.vercel.app/expense/expense", formData,
+>>>>>>> 9a295a5b45491d4ccf68dbdc998c7f1379a0c1a3
             {
                 headers: {
                     Authorization: "Bearer " + localStorage.getItem("token"),

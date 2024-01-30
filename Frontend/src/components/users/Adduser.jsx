@@ -20,7 +20,13 @@ export const AddUser = () => {
     formData.append("mobile_no", data.mobile_no);
     formData.append("status", data.status);
     
+<<<<<<< HEAD
     const res = await axios.post("https://expense-backend-tan.vercel.app/user/user", data);
+=======
+    // const res = await axios.post("http://localhost:3002/user/user", data);
+    const res = await axios.post("https://expense-backend-tan.vercel.app/user/user", data);
+    
+>>>>>>> 9a295a5b45491d4ccf68dbdc998c7f1379a0c1a3
     console.log(res.data);
     
     toast.success('User Added Successfully!', {
