@@ -23,7 +23,6 @@ export const AddExpenses = () => {
     const submitHandler = async (data) => {
         const formData = new FormData();
 
-<<<<<<< HEAD
         formData.append("name", data.name);
         formData.append("status", data.status);
         formData.append("expense", selectedExpense);
@@ -46,28 +45,6 @@ export const AddExpenses = () => {
         setExpenses(res.data.data);
         return res.data.data.name;
     };
-=======
-      formData.append("name", data.name);
-      formData.append("status", data.status);
-      formData.append("expense", selectedExpense);
-      const res = await axios.post(
-        "https://expense-backend-tan.vercel.app/expenseSubCat/expenseSubCat", 
-        formData, 
-        {
-          headers: {
-            'Authorization': "Bearer " + localStorage.getItem("token")
-          }
-        }
-      );
-      console.log(res.data);
-  };
-  const loadExpenses = async() => {
-    const res = await axios.get("https://expense-backend-tan.vercel.app/expense/expense");
-    console.log(res.data.data);
-    setExpenses(res.data.data);
-    return res.data.data.name;
-}
->>>>>>> 9a295a5b45491d4ccf68dbdc998c7f1379a0c1a3
 
     const handleExpense = (event) => {
         console.log(event.target.value);
